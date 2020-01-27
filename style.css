@@ -17,6 +17,8 @@ body {
 .panels {
   min-height: 100vh;
   overflow: hidden;
+  display: flex; /* makes panels side by side */
+
 }
 
 .panel {
@@ -34,6 +36,11 @@ body {
   font-size: 20px;
   background-size: cover;
   background-position: center;
+  flex: 1; /* makes imgs spread evenly across the available x axis*/
+  justify-content: center; /* center content x axis */
+  align-items: center; /* center content y axis */
+  display: flex; /* makes content side by side */
+  flex-direction: column; /* stacks content vertically */
 }
 
 .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -47,6 +54,10 @@ body {
   margin: 0;
   width: 100%;
   transition: transform 0.5s;
+  flex: 1 1 auto; /*grow evenly, shrink evenly, auto fit the content box size*/ 
+  display: flex; /*allows the two below to position it further*/
+  justify-content: center;
+  align-items: center;
 }
 
 .panel p {
@@ -54,6 +65,7 @@ body {
   font-family: 'Amatic SC', cursive;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
   font-size: 2em;
+  /* border: red solid 1px; */
 }
 
 .panel p:nth-child(2) {
